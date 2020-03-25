@@ -1,9 +1,13 @@
 package com.luffy.cloud.ali.provider.payment.controller;
 
 
+import com.luffy.cloud.ali.provider.payment.entity.Payment;
+import com.luffy.cloud.ali.provider.payment.service.IPaymentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +20,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
+
+    @Autowired
+    private IPaymentService iPaymentService;
+
+    @RequestMapping("/select/all")
+    public List<Payment> selectAll() {
+        List<Payment> paymentList = iPaymentService.selectAll();
+        for (Payment payment : paymentList) {
+            System.out.println(payment);
+        }
+        return paymentList;
+    }
 
 }

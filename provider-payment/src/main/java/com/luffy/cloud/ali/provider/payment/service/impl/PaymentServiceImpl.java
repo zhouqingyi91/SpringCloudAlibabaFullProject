@@ -1,10 +1,13 @@
 package com.luffy.cloud.ali.provider.payment.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.luffy.cloud.ali.provider.payment.entity.Payment;
 import com.luffy.cloud.ali.provider.payment.mapper.PaymentMapper;
 import com.luffy.cloud.ali.provider.payment.service.IPaymentService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +20,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentServiceImpl extends ServiceImpl<PaymentMapper, Payment> implements IPaymentService {
 
+    @Resource
+    private PaymentMapper paymentMapper;
+
+    @Override
+    public List<Payment> selectAll() {
+        return paymentMapper.selectList(null);
+    }
 }
