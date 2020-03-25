@@ -1,0 +1,17 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: provider-payment
+  # 数据库连接配置 - 开始
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud-ali-full?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password:
+  # 数据库连接配置 - 结束
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 配置MyBatis plus日志
