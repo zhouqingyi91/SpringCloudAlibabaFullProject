@@ -12,6 +12,12 @@
     <artifactId>provider-payment</artifactId>
 
     <dependencies>
+        <!--依赖别的模块-->
+        <dependency>
+            <groupId>com.luffy.springcloud.alibaba</groupId>
+            <artifactId>cloud-basic</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
         <!--springboot项目基本上必备的两个依赖 - 开始-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

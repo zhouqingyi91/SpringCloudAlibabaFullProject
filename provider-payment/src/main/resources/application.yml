@@ -2,7 +2,7 @@ server:
   port: 8010
 spring:
   application:
-    name: provider-payment
+    name: cloud-payment-service
   # 数据库连接配置 - 开始
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

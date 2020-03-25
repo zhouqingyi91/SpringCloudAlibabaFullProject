@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>provider-payment</module>
+        <module>cloud-basic</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -36,6 +37,7 @@
         <guava.version>22.0</guava.version>
         <esjob.version>2.1.5</esjob.version>
         <apache-curator-es-job.version>2.13.0</apache-curator-es-job.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
     </properties>
 
     <!--依赖版本锁定, 子模块就不用写groupId和version了-->
