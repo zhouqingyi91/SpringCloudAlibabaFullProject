@@ -2,9 +2,11 @@ package com.luffy.cloud.ali.provider.payment.controller;
 
 
 import com.luffy.cloud.ali.basic.data.ResultData;
+import com.luffy.cloud.ali.basic.exception.BusinessException;
 import com.luffy.cloud.ali.provider.payment.entity.Payment;
 import com.luffy.cloud.ali.provider.payment.service.IPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +34,14 @@ public class PaymentController {
             System.out.println(payment);
         }
         return ResultData.buildSuccessResult(paymentList);
+    }
+
+    @RequestMapping("/insert")
+    public ResultData<Boolean> insert(@RequestBody Payment payment) {
+        boolean save = iPaymentService.save(payment);
+        if(save)
+            return ResultData.buildSuccessResult(save);
+        throw new BusinessException("payment插入失败");
     }
 
 }

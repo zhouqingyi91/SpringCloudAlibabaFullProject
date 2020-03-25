@@ -83,12 +83,12 @@ public class ResultData<T> implements Serializable {
         try {
             if (data != null && data.getClass().getName().equals("com.baomidou.mybatisplus.extension.plugins.pagination.Page")) {
                 Page<T> page = new Page<>();
-                page.setDataList((List) page.getClass().getMethod("getRecords").invoke(page));
-                Number number = (Number) page.getClass().getMethod("getTotal").invoke(page);
+                page.setDataList((List) data.getClass().getMethod("getRecords").invoke(data));
+                Number number = (Number) data.getClass().getMethod("getTotal").invoke(data);
                 page.setTotalElements(number.intValue());
-                number = (Number) page.getClass().getMethod("getCurrent").invoke(page);
+                number = (Number) data.getClass().getMethod("getCurrent").invoke(data);
                 page.setPageNumber(number.intValue());
-                number = (Number) page.getClass().getMethod("getSize").invoke(page);
+                number = (Number) data.getClass().getMethod("getSize").invoke(data);
                 page.setPageSize(number.intValue());
                 resultData.setData(page);
             } else {

@@ -1,5 +1,6 @@
 package com.luffy.cloud.ali.basic.data;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -25,12 +26,14 @@ public class Pageable implements Serializable {
     }
 
     @ApiModelProperty(value = "页码")
+    @JsonProperty("page_number")
     @Min(value = 1,message = "页码必须大于1")
-    private int pageNumber;
+    private int pageNumber = 1;
 
     @ApiModelProperty(value = "每页数据长度")
+    @JsonProperty("page_size")
     @Min(value = 1,message = "每页至少1条数据")
-    private int pageSize;
+    private int pageSize = 1;
 
     public int getStart(){
         return (pageNumber-1)*pageSize;
