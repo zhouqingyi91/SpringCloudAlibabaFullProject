@@ -20,7 +20,7 @@ spring:
   # nacos服务注册中心 - 结束
 
 # 配置MyBatis plus日志 - 结束
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 # 配置MyBatis plus日志 - 结束

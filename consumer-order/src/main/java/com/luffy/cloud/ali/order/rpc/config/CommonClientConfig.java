@@ -13,8 +13,8 @@ public class CommonClientConfig {
 
     @Bean
     public Request.Options feignRequestOptions(){
-        int connectTimeoutMillis = 2 * 1000;
-        int readTimeoutMillis = 3 * 1000;
+        int connectTimeoutMillis = 120 * 1000;
+        int readTimeoutMillis = 120 * 1000;
         return new Request.Options(connectTimeoutMillis, readTimeoutMillis);
     }
 

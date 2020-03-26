@@ -9,3 +9,9 @@ spring:
         server-addr: localhost:8848
   aop:
     proxy-target-class: true
+
+# 开启feign对sentinel的支持 - 开始
+feign:
+  sentinel:
+    enabled: true
+# 开启feign对sentinel的支持 - 结束
