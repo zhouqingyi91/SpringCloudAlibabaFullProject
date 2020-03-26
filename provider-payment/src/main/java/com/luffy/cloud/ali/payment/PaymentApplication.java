@@ -1,8 +1,10 @@
-package com.luffy.cloud.ali.provider.payment;
+package com.luffy.cloud.ali.payment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+@EnableDiscoveryClient
 @SpringBootApplication
 public class PaymentApplication {
     public static void main(String[] args) {

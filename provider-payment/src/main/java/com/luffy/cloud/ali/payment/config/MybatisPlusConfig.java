@@ -1,4 +1,4 @@
-package com.luffy.cloud.ali.provider.payment.config;
+package com.luffy.cloud.ali.payment.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan("com.luffy.cloud.ali.provider.payment.mapper")
+@MapperScan("com.luffy.cloud.ali.payment.mapper")
 public class MybatisPlusConfig {
 
     /**

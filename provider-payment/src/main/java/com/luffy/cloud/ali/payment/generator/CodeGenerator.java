@@ -1,4 +1,4 @@
-package com.luffy.cloud.ali.provider.payment.generator;
+package com.luffy.cloud.ali.payment.generator;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;

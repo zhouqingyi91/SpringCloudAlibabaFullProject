@@ -1,7 +1,7 @@
-package com.luffy.cloud.ali.provider.payment.service;
+package com.luffy.cloud.ali.payment.service;
 
-import com.luffy.cloud.ali.provider.payment.entity.Payment;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.luffy.cloud.ali.payment.entity.Payment;
 
 import java.util.List;
 

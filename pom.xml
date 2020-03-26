@@ -10,6 +10,8 @@
     <modules>
         <module>provider-payment</module>
         <module>cloud-basic</module>
+        <module>consumer-order</module>
+        <module>cloud-dto</module>
     </modules>
     <packaging>pom</packaging>
 

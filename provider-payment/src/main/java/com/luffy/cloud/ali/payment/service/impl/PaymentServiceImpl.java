@@ -1,9 +1,9 @@
-package com.luffy.cloud.ali.provider.payment.service.impl;
+package com.luffy.cloud.ali.payment.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.luffy.cloud.ali.provider.payment.entity.Payment;
-import com.luffy.cloud.ali.provider.payment.mapper.PaymentMapper;
-import com.luffy.cloud.ali.provider.payment.service.IPaymentService;
+import com.luffy.cloud.ali.payment.entity.Payment;
+import com.luffy.cloud.ali.payment.mapper.PaymentMapper;
+import com.luffy.cloud.ali.payment.service.IPaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

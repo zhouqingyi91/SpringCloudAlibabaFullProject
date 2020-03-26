@@ -1,10 +1,10 @@
-package com.luffy.cloud.ali.provider.payment.controller;
+package com.luffy.cloud.ali.payment.controller;
 
 
 import com.luffy.cloud.ali.basic.data.ResultData;
 import com.luffy.cloud.ali.basic.exception.BusinessException;
-import com.luffy.cloud.ali.provider.payment.entity.Payment;
-import com.luffy.cloud.ali.provider.payment.service.IPaymentService;
+import com.luffy.cloud.ali.payment.entity.Payment;
+import com.luffy.cloud.ali.payment.service.IPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,7 +1,7 @@
-package com.luffy.cloud.ali.provider.payment.mapper;
+package com.luffy.cloud.ali.payment.mapper;
 
-import com.luffy.cloud.ali.provider.payment.entity.Payment;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.luffy.cloud.ali.payment.entity.Payment;
 
 /**
  * <p>
