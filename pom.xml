@@ -12,6 +12,7 @@
         <module>cloud-basic</module>
         <module>consumer-order</module>
         <module>cloud-dto</module>
+        <module>TestAsync</module>
     </modules>
     <packaging>pom</packaging>
 
