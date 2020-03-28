@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: cloud-order-service
+  profiles:
+    active: dev #环境标识

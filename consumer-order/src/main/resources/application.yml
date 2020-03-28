@@ -1,17 +1,18 @@
-server:
-  port: 7010
-spring:
-  application:
-    name: cloud-order-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
-  aop:
-    proxy-target-class: true
-
-# 开启feign对sentinel的支持 - 开始
-feign:
-  sentinel:
-    enabled: true
-# 开启feign对sentinel的支持 - 结束
+######## 该配置文件放在nacos上, 命名为cloud-order-service.yml ########
+#server:
+#  port: 7010
+#spring:
+#  application:
+#    name: cloud-order-service
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#  aop:
+#    proxy-target-class: true
+#
+## 开启feign对sentinel的支持 - 开始
+#feign:
+#  sentinel:
+#    enabled: true
+## 开启feign对sentinel的支持 - 结束

@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        group: LUFFY_GROUP
+        namespace: 132558fd-064e-41cb-9024-72b0bff9bbfb
+      config:
+        file-extension: yml #配置文件格式
+        group: LUFFY_GROUP
+        namespace: 132558fd-064e-41cb-9024-72b0bff9bbfb
