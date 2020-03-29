@@ -13,6 +13,7 @@
         <module>consumer-order</module>
         <module>cloud-dto</module>
         <module>TestAsync</module>
+        <module>cloud-gateway</module>
     </modules>
     <packaging>pom</packaging>
 

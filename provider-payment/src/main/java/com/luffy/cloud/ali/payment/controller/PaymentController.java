@@ -30,9 +30,9 @@ public class PaymentController {
     @RequestMapping("/select/all")
     public ResultData<List<Payment>> selectAll() {
         List<Payment> paymentList = iPaymentService.selectAll();
-        for (Payment payment : paymentList) {
-            System.out.println(payment);
-        }
+//        for (Payment payment : paymentList) {
+//            System.out.println(payment);
+//        }
         return ResultData.buildSuccessResult(paymentList);
     }
 
