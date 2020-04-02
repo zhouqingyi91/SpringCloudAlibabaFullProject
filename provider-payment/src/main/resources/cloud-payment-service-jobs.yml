@@ -1,0 +1,16 @@
+# 该文件放在nacos上
+jobs:
+  regCenter:
+    serverList: "localhost:2181"
+    namespace: payment-service-jobs
+  instances:
+    - name: insert-payment-job
+      # 每天1点生成前一天的数据
+      #      cron: 0 0 1 * * ?
+      # 每20秒执行一次
+      cron: "0/20 * * * * ?"
+      #作业分片
+      shardingTotalCount: 1
+      shardingItemParameters: 0=even
+      jobDescription: "给payment表增加数据"
+      jobParameter:

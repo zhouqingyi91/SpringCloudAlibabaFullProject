@@ -46,12 +46,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <!--springboot项目基本上必备的两个依赖 - 结束-->
+
+        <!--@ConfigurationProperties和@EnableConfigurationProperties注解需要的依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--springboot项目基本上必备的两个依赖 - 结束-->
 
     </dependencies>
 

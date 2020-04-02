@@ -6,6 +6,7 @@ jobs:
     - name: some-job
       # 每天1点生成前一天的数据
       #      cron: 0 0 1 * * ?
+      # 每三秒执行一次
       cron: "0/3 * * * * ?"
       #两个作业分片
       shardingTotalCount: 2
@@ -13,20 +14,13 @@ jobs:
       shardingItemParameters: 0=even,1=odd
       jobDescription: "设备纬度日报"
       jobParameter:
-    - name: sale-daily
+    - name: insert-payment-job
       # 每天1点生成前一天的数据
       #      cron: 0 0 1 * * ?
-      cron: "0 0/1 * * * ?"
+      # 每20秒执行一次
+      cron: "0/20 * * * * ?"
       #作业分片
       shardingTotalCount: 1
       shardingItemParameters: 0=even
-      jobDescription: "销售日报"
-      jobParameter:
-    - name: sale-monthly
-      # 每月第一天3点生成前一月数据
-      cron: "0 0/1 * * * ?"
-      #作业分片
-      shardingTotalCount: 1
-      shardingItemParameters: 0=even
-      jobDescription: "销售月报"
+      jobDescription: "给payment表增加数据"
       jobParameter:

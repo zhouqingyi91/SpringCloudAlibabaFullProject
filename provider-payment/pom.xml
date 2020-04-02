@@ -75,5 +75,37 @@
         <!--数据库相关 - 结束-->
 
 
+        <!--elastic-job springboot依赖-->
+        <dependency>
+            <groupId>com.dangdang</groupId>
+            <artifactId>elastic-job-lite-spring</artifactId>
+            <version>${esjob.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dangdang</groupId>
+            <artifactId>elastic-job-lite-core</artifactId>
+            <version>${esjob.version}</version>
+        </dependency>
+
+        <!--Elastic-Job项目基于开源产品Quartz和Zookeeper及其客户端Curator进行二次开发，
+        如果与新版的Spring Boot一起使用，会出现Curator的版本冲突。-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${apache-curator-es-job.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>${apache-curator-es-job.version}</version>
+        </dependency>
+
+        <!--@ConfigurationProperties和@EnableConfigurationProperties注解需要的依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
     </dependencies>
 </project>

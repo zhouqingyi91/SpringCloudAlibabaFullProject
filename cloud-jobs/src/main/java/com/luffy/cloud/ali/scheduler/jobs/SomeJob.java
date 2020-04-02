@@ -16,9 +16,10 @@ import java.util.Calendar;
 public class SomeJob implements SimpleJob {
     @Override
     public void execute(ShardingContext shardingContext) {
-//        log.info("--------some job start --------");
-//        log.info("----------doing job----------");
-//        log.info("--------some job end --------");
+        /**
+         * 可以根据不同的shardingParameter做不同的业务处理
+         * ex, 不同格式的文件有不同的处理方式, video, img, xml
+         */
         System.out.println(Calendar.getInstance().getTime() + ": shardingParameter: " + shardingContext.getShardingParameter());
         System.out.println(Calendar.getInstance().getTime() + ": shardingItem: " + shardingContext.getShardingItem());
     }

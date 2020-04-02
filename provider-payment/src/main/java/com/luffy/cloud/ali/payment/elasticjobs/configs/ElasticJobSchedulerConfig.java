@@ -1,11 +1,12 @@
-package com.luffy.cloud.ali.scheduler.configs;
+package com.luffy.cloud.ali.payment.elasticjobs.configs;
 
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
+import com.dangdang.ddframe.job.event.JobEventConfiguration;
 import com.dangdang.ddframe.job.lite.api.JobScheduler;
 import com.dangdang.ddframe.job.lite.config.LiteJobConfiguration;
 import com.dangdang.ddframe.job.lite.spring.api.SpringJobScheduler;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
-import com.luffy.cloud.ali.scheduler.jobs.SomeJob;
+import com.luffy.cloud.ali.payment.elasticjobs.jobs.InsertPaymentJob;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,26 +19,23 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class ElasticJobSchedulerConfig {
 
-    final SomeJob someJob;
-    final LiteJobConfiguration someJobConfig;
+    final InsertPaymentJob insertPaymentJob;
+    final LiteJobConfiguration insertPaymentJobConfig;
 
     final ZookeeperRegistryCenter zookeeperRegistryCenter;
 
-//    final JobEventConfiguration jobEventConfig;
-
+    final JobEventConfiguration jobEventConfig;
 
     @Bean(initMethod = "init")
-    public JobScheduler someJobScheduler(){
-        return getJobScheduler(someJob, someJobConfig);
+    public JobScheduler insertPaymentJobScheduler() {
+        return getJobScheduler(insertPaymentJob, insertPaymentJobConfig);
     }
-
 
     private JobScheduler getJobScheduler(SimpleJob job, LiteJobConfiguration jobConfig) {
         return new SpringJobScheduler(job
                 , zookeeperRegistryCenter
                 , jobConfig
-        );
-//                , jobEventConfig
-//                , new CommonElasticJobListener());
+                , jobEventConfig
+                , new CommonElasticJobListener());
     }
 }

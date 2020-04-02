@@ -18,8 +18,8 @@ import java.util.Scanner;
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
 public class CodeGenerator {
 
-    private static final String PARENT = "com.luffy.cloud.ali.provider.payment";
-    private static final String DIR =  System.getProperty("user.dir") + "/provider-payment";
+    private static final String PARENT = "com.luffy.cloud.ali.payment";
+    private static final String DIR = System.getProperty("user.dir") + "/provider-payment";
 
     /**
      * <p>
@@ -117,12 +117,13 @@ public class CodeGenerator {
         // 配置自定义输出模板
         //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
         // templateConfig.setEntity("templates/entity2.java");
-        // templateConfig.setService();
-        // templateConfig.setController();
-//        templateConfig.setServiceImpl(null);
-//        templateConfig.setMapper(null);
 
+        // 因为entity的改变而重新生成entity和mapper
+        templateConfig.setService(null);
+        templateConfig.setController(null);
+        templateConfig.setServiceImpl(null);
         templateConfig.setXml(null);
+//        templateConfig.setMapper(null);
         mpg.setTemplate(templateConfig);
 
         // 策略配置
