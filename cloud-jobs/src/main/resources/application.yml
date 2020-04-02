@@ -1,0 +1,32 @@
+jobs:
+  regCenter:
+    serverList: "localhost:2181"
+    namespace: luffy-cloud-elastic-job
+  instances:
+    - name: some-job
+      # 每天1点生成前一天的数据
+      #      cron: 0 0 1 * * ?
+      cron: "0/3 * * * * ?"
+      #两个作业分片
+      shardingTotalCount: 2
+      #even执行设备编号为偶数的设备
+      shardingItemParameters: 0=even,1=odd
+      jobDescription: "设备纬度日报"
+      jobParameter:
+    - name: sale-daily
+      # 每天1点生成前一天的数据
+      #      cron: 0 0 1 * * ?
+      cron: "0 0/1 * * * ?"
+      #作业分片
+      shardingTotalCount: 1
+      shardingItemParameters: 0=even
+      jobDescription: "销售日报"
+      jobParameter:
+    - name: sale-monthly
+      # 每月第一天3点生成前一月数据
+      cron: "0 0/1 * * * ?"
+      #作业分片
+      shardingTotalCount: 1
+      shardingItemParameters: 0=even
+      jobDescription: "销售月报"
+      jobParameter:

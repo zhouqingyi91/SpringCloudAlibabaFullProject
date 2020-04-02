@@ -14,6 +14,7 @@
         <module>cloud-dto</module>
         <module>TestAsync</module>
         <module>cloud-gateway</module>
+        <module>cloud-jobs</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -64,6 +65,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <!--通用依赖-->
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

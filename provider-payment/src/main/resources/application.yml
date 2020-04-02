@@ -1,27 +1,27 @@
-######## 该配置文件放在nacos上, 命名为cloud-payment-service.yml ########
-#server:
-#  port: 8010
-#spring:
-#  application:
-#    name: cloud-payment-service
-#  # 数据库连接配置 - 开始
-#  datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    driverClassName: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/cloud-ali-full?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
-#    username: root
-#    password:
-#  # 数据库连接配置 - 结束
-#
-#  # nacos服务注册中心 - 开始
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: localhost:8848
-#  # nacos服务注册中心 - 结束
-#
-## 配置MyBatis plus日志 - 结束
-##mybatis-plus:
-##  configuration:
-##    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-## 配置MyBatis plus日志 - 结束
+####### 该配置文件放在nacos上, 命名为cloud-payment-service.yml ########
+server:
+  port: 8010
+spring:
+  application:
+    name: cloud-payment-service
+  # 数据库连接配置 - 开始
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud-ali-full?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password:
+  # 数据库连接配置 - 结束
+
+  # nacos服务注册中心 - 开始
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  # nacos服务注册中心 - 结束
+
+# 配置MyBatis plus日志 - 结束
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 配置MyBatis plus日志 - 结束
