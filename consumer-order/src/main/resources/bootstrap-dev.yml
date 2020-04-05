@@ -13,7 +13,16 @@ spring:
       transport:
         dashboard: localhost:8080
         port: 8719 #默认端口, 加入被占用, 会+1扫描, 直到找到未被占用的端口
-        
+      datasource:
+        ds1:
+          nacos: #使用nacos作为sentinel规则持久化的存储位置
+            server-addr: localhost:8848
+            # 具体的限流规则等开发时候再配置
+            data-id: cloud-order-service-flow-rules
+            group-id: SENTINEL_GROUP
+            data-type: json
+            rule-type: flow
+            namespace: 132558fd-064e-41cb-9024-72b0bff9bbfb
 management:
   endpoints:
     web:
