@@ -9,3 +9,13 @@ spring:
         file-extension: yml #配置文件格式
         group: LUFFY_GROUP
         namespace: 132558fd-064e-41cb-9024-72b0bff9bbfb
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719 #默认端口, 加入被占用, 会+1扫描, 直到找到未被占用的端口
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

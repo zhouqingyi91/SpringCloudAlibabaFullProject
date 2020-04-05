@@ -1,0 +1,18 @@
+################### 此文件存储在nacos上 ###################
+server:
+  port: 7001
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #让gateway从nacos中获取服务信息
+      routes: #路由数组/[路由 就是指当请求满足什么样的条件的时候转发到哪个微服务上]
+        - id: product_route #当前路由发的标识, 要求唯一, 默认是UUID
+          # uri: http://localhost:7010 #请求最终要被转发到的地址
+          uri: lb://cloud-order-service #lb指的是负载均衡, 后面跟的是具体微服务在nacos的标识
+          order: 1 #路由的优先级, 数字越小代表路由的优先级越高
+          predicates: #断言(条件判断, 返回值是boolean, 转发请求要满足的条件)
+            - Path=/order/** #内置了12种, 也可以自定义
+#          filters: #过滤器
+#            - StripPrefix=1 #在请求转发之前去掉1层路径(/product-serv被去掉了)
