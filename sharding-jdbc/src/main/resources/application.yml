@@ -67,10 +67,8 @@ spring:
       # 广播表(公共表)
       broadcast-tables: area_dict
       default-data-source-name: product-db0
-      binding-tables: item_info,item_description
+      # 小坑: 绑定表是以数组形式声明的
+      binding-tables[0]: item_info,item_description
+#      binding-tables[1]: table_xxx, table_yyy
     props:
       sql.show: true
-
-#mybatis-plus:
-#  mapper-locations: classpath:mapper/*.xml
-#  type-aliases-package: com.luffy.entity

@@ -17,5 +17,5 @@ public interface ItemInfoMapper extends BaseMapper<ItemInfo> {
 
     List<ItemInfo> getByStoreId(Long storeId);
 
-    List<ItemInfo> selectJoin(Long infoId);
+    List<ItemInfo> selectJoin();
 }

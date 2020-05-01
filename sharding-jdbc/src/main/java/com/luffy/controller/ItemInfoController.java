@@ -57,7 +57,7 @@ public class ItemInfoController {
 
     @RequestMapping("/select/join")
     public List<ItemInfo> selectJoin() {
-        List<ItemInfo> itemInfoList = itemInfoService.selectJoin(1256312375013031937L);
+        List<ItemInfo> itemInfoList = itemInfoService.selectJoin();
         return itemInfoList;
     }
 }

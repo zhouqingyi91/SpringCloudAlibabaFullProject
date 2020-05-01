@@ -21,7 +21,6 @@
         select item_info.*, item_description.item_description
         from item_info, item_description
         where item_info.item_info_id = item_description.item_info_id
-        and item_info.item_info_id = #{infoId}
     </select>
 
 </mapper>

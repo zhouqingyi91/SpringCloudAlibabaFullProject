@@ -24,8 +24,8 @@ public class ItemInfoServiceImpl extends ServiceImpl<ItemInfoMapper, ItemInfo> i
     private ItemInfoMapper itemInfoMapper;
 
     @Override
-    public List<ItemInfo> selectJoin(Long infoId) {
-        return itemInfoMapper.selectJoin(infoId);
+    public List<ItemInfo> selectJoin() {
+        return itemInfoMapper.selectJoin();
     }
 
     @Override
