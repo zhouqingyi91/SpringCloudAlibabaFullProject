@@ -15,6 +15,7 @@
         <module>TestAsync</module>
         <module>cloud-gateway</module>
         <module>cloud-jobs</module>
+        <module>sharding-jdbc</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -37,12 +38,13 @@
         <fastjson.version>1.2.60</fastjson.version>
         <freemarker.version>2.3.28</freemarker.version>
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
-        <sharding.version>4.0.0-RC3</sharding.version>
+        <sharding.version>4.0.1</sharding.version>
         <druid.version>1.1.21</druid.version>
         <guava.version>22.0</guava.version>
         <esjob.version>2.1.5</esjob.version>
         <apache-curator-es-job.version>2.13.0</apache-curator-es-job.version>
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <mysql-conn.version>5.1.48</mysql-conn.version>
     </properties>
 
     <!--依赖版本锁定, 子模块就不用写groupId和version了-->

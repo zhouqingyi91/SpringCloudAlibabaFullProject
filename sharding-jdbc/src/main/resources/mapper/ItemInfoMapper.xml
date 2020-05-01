@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luffy.mapper.ItemInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.luffy.entity.ItemInfo">
+        <id column="item_info_id" property="itemInfoId" />
+        <result column="item_name" property="itemName" />
+        <result column="item_price" property="itemPrice" />
+        <result column="store_id" property="storeId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        item_info_id, item_name, item_price, store_id
+    </sql>
+    <select id="getByStoreId" resultType="com.luffy.entity.ItemInfo">
+        select * from item_info where store_id = #{storeId}
+    </select>
+    <select id="selectJoin" resultType="com.luffy.entity.ItemInfo">
+        select item_info.*, item_description.item_description
+        from item_info, item_description
+        where item_info.item_info_id = item_description.item_info_id
+        and item_info.item_info_id = #{infoId}
+    </select>
+
+</mapper>

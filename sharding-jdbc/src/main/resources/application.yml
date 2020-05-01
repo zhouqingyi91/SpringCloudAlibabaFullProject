@@ -1,0 +1,76 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: product-db0,product-db1,store-db
+      product-db0:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/sharding_product_db0?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+        username: root
+        password:
+      product-db1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/sharding_product_db1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+        username: root
+        password:
+      store-db:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/sharding_store_db?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+        username: root
+        password:
+    sharding:
+      tables:
+        # 商品表 分库+分表 和商品详情表绑定
+        item_info:
+          actualDataNodes: product-db$->{0..1}.item_info$->{0..1}
+          databaseStrategy:
+            inline:
+              shardingColumn: store_id
+              algorithmExpression: product-db$->{store_id % 2}
+          tableStrategy:
+            inline:
+              sharding-column: item_info_id
+              algorithm-expression: item_info$->{item_info_id % 2}
+          keyGenerator:
+            column: item_info_id
+            type: SNOWFLAKE
+        # 商品详情表 分库+分表 和商品表绑定
+        item_description:
+          actual-data-nodes: product-db$->{0..1}.item_description$->{0..1}
+          databaseStrategy:
+            inline:
+              shardingColumn: store_id
+              algorithmExpression: product-db$->{store_id % 2}
+          tableStrategy:
+            inline:
+              sharding-column: item_info_id
+              algorithm-expression: item_description$->{item_info_id % 2}
+          keyGenerator:
+            column: item_info_id
+            type: SNOWFLAKE
+        # 店铺表 不分库+不分表
+        store_info:
+          actual-data-nodes: store-db.store_info
+          databaseStrategy:
+            inline:
+              shardingColumn: store_id
+              algorithmExpression: store-db
+          tableStrategy:
+            inline:
+              sharding-column: store_id
+              algorithm-expression: store_info
+  #          keyGenerator:
+  #            column: store_id
+  #            type: SNOWFLAKE
+      # 广播表(公共表)
+      broadcast-tables: area_dict
+      default-data-source-name: product-db0
+      binding-tables: item_info,item_description
+    props:
+      sql.show: true
+
+#mybatis-plus:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.luffy.entity
