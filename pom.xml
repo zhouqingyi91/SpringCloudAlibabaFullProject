@@ -16,6 +16,7 @@
         <module>cloud-gateway</module>
         <module>cloud-jobs</module>
         <module>sharding-jdbc</module>
+        <module>multi-proxy</module>
     </modules>
     <packaging>pom</packaging>
 
