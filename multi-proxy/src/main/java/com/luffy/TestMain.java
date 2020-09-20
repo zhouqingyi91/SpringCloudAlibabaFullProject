@@ -17,5 +17,7 @@ public class TestMain {
 
         BaseService2 chan2 = BeanFactory2.getNewInstance(Chan2.class);
         chan2.eat();
+        System.out.println("=========================");
+        chan2.sleep();
     }
 }

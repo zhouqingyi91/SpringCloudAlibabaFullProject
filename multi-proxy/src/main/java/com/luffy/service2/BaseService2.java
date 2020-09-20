@@ -6,4 +6,6 @@ package com.luffy.service2;
  **/
 public interface BaseService2 {
     void eat();
+
+    void sleep();
 }

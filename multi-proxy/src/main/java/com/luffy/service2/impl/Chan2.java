@@ -11,4 +11,9 @@ public class Chan2 implements BaseService2 {
     public void eat() {
         System.out.println("蝉2吃树脂");
     }
+
+    @Override
+    public void sleep() {
+        System.out.println("蝉2睡觉");
+    }
 }
